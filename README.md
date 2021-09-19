@@ -1,2 +1,2 @@
-# urban-goggles
+# dotfiles
 mcgonagle's dotfiles
