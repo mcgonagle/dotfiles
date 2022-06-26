@@ -125,3 +125,6 @@ if [ -f '/Users/tom/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/t
 if [ -f '/Users/tom/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tom/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 if [ -e /Users/tom/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/tom/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# This adds the Armory Version Manager (AVM) and Armory CLI to the path
+export PATH="${PATH}:/Users/tom/.avm/bin"
