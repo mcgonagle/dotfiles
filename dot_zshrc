@@ -128,3 +128,4 @@ if [ -e /Users/tom/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/tom/.nix-p
 
 # This adds the Armory Version Manager (AVM) and Armory CLI to the path
 export PATH="${PATH}:/Users/tom/.avm/bin"
+export GPG_TTY=$(tty)
