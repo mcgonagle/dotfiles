@@ -91,7 +91,8 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+#source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+source "/opt/homebrew/Cellar/kube-ps1/0.7.0/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
 
 kubeoff
