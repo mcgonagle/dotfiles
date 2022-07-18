@@ -133,3 +133,4 @@ if [ -f '/Users/tom/Dropbox/Mac/Downloads/google-cloud-sdk/completion.zsh.inc' ]
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+export PATH=/Users/tom/Documents/GitHub/awssume/bin:$PATH
