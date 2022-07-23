@@ -5,7 +5,7 @@
 	required = true
 [user]
 	name = mcgonagle
-	email = mcgonagle@gmail.com
+	email = mcgonagle@github.com
 [alias]
 	vlog = " log --graph --date-order --date=relative --pretty=format:\"%C(cyan)%h: %Cblue - %an - %Cgreen %C(cyan)%ar:%Creset%n%s%n\" --color"
 [color]
