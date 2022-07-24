@@ -8,6 +8,13 @@ fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
+#history control
+expot HISTSIZE=1000000
+export HISTFILESIZE=1000000
+shopt -s histappend
+export PROMPT_COMMAND=`history -a`
+export HISTIGNORE="history:ls:pwd:"
+
 # User specific aliases and functions
 ##bindkey -v
 set -o vi
