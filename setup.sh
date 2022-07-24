@@ -1,0 +1,1 @@
+cat /workspaces/.codespaces/.persistedshare/dotfiles/dot_bashrc >> ~/.bashrc
