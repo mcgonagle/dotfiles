@@ -14,6 +14,9 @@ set -o vi
 alias h="clear"
 alias xx="exit"
 alias ls="ls --color"
+alias ll="ls -l"
+alias la=" ls -la"
+alias ltr="ls -ltr"
 
 # This command is used a LOT both below and in daily life
 alias k=kubectl
