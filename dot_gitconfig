@@ -6,6 +6,7 @@
 [user]
 	name = mcgonagle
 	email = mcgonagle@github.com
+	signingkey = FBD596208D29D13D
 [alias]
 	vlog = " log --graph --date-order --date=relative --pretty=format:\"%C(cyan)%h: %Cblue - %an - %Cgreen %C(cyan)%ar:%Creset%n%s%n\" --color"
 	co = checkout
