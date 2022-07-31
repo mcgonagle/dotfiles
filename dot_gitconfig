@@ -8,7 +8,26 @@
 	email = mcgonagle@github.com
 [alias]
 	vlog = " log --graph --date-order --date=relative --pretty=format:\"%C(cyan)%h: %Cblue - %an - %Cgreen %C(cyan)%ar:%Creset%n%s%n\" --color"
+	co = checkout
+	st = status
 [color]
 	ui = auto
 [core]
-	editor = code --wait
+	editor = nvim
+	excludesfile = /Users/tom/.gitignore_global
+	pager = less -x4
+[alais]
+	br = branch
+[push]
+	default = simple
+[pull]
+	rebase = true
+	ff = only
+[fetch]
+	prune = true
+[merge]
+	ff = false
+[grep]
+	lineNumber = true
+[diff]
+	wsErrorHighlight = all
