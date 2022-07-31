@@ -109,6 +109,8 @@ kubeoff
 bindkey -v
 alias h="clear"
 alias xx="exit"
+if [ -e /opt/homebrew/bin/nvim ]; then alias vi="nvim" && alias v="nvim";fi
+
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000000
@@ -134,3 +136,4 @@ if [ -f '/Users/tom/Dropbox/Mac/Downloads/google-cloud-sdk/completion.zsh.inc' ]
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export PATH=/Users/tom/Documents/GitHub/awssume/bin:$PATH
+export PATH=/usr/local/bin:$PATH
