@@ -92,11 +92,10 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 #source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-#source "/opt/homebrew/Cellar/kube-ps1/0.7.0/share/kube-ps1.sh"
-if [ -e /usr/local/Cellar/kube-ps1/0.7.0/share/kube-ps1.sh ]; then source /usr/local/Cellar/kube-ps1/0.7.0/share/kube-ps1.sh;fi
-if [ -e /usr/local/Cellar/kube-ps1/0.7.0/share/kube-ps1.sh ]; then export PS1='$(kube_ps1)'$PS1;fi
-if [ -e /usr/local/Cellar/kube-ps1/0.7.0/share/kube-ps1.sh ]; then kubeoff;fi
+source "/opt/homebrew/Cellar/kube-ps1/0.7.0/share/kube-ps1.sh"
+PS1='$(kube_ps1)'$PS1
 
+kubeoff
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -111,6 +110,10 @@ bindkey -v
 alias h="clear"
 alias xx="exit"
 if [ -e /opt/homebrew/bin/nvim ]; then alias vi="nvim" && alias v="nvim";fi
+
+alias val="nvim ~/.zshrc"
+alias sal="source ~/.zshrc"
+alias ltr="ls -ltr"
 
 
 HISTFILE="$HOME/.zsh_history"
@@ -138,3 +141,10 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export PATH=/Users/tom/Documents/GitHub/awssume/bin:$PATH
 export PATH=/usr/local/bin:$PATH
+
+export GPG_TTY=$(tty)
+
+# ~/.zshrc
+
+eval "$(starship init zsh)"
+
