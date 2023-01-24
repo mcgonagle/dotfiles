@@ -134,3 +134,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export PATH=/Users/tom/Documents/GitHub/awssume/bin:$PATH
 export PATH=/usr/local/bin:$PATH
+autoload -U compinit; compinit
+
+eval "$(zoxide init zsh)"
