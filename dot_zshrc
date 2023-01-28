@@ -109,6 +109,13 @@ alias xx="exit"
 
 if [ -e /opt/homebrew/bin/nvim ]; then alias vi="nvim" && alias v="nvim" &&  alias val="nvim ~/.zshrc" && alias sal="source ~/.zshrc"; fi 
 
+alias ls="ls -G"
+alias ltr="ls -ltr"
+alias l="ls -l"
+alias ll="ls -l"
+alias la="ls -la"
+alias lla="ls -la"
+alias ltra="ls -ltra"
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000000
