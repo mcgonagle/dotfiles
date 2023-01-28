@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git kubectl web-search)
+plugins=(git kubectl web-search gh)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,7 +106,8 @@ if [[ `uname` == "Darwin" ]]; then kubeoff; fi
 bindkey -v
 alias h="clear"
 alias xx="exit"
-if [ -e /opt/homebrew/bin/nvim ]; then alias vi="nvim" && alias v="nvim";fi
+
+if [ -e /opt/homebrew/bin/nvim ]; then alias vi="nvim" && alias v="nvim" &&  alias val="nvim ~/.zshrc" && alias sal="source ~/.zshrc"; fi 
 
 
 HISTFILE="$HOME/.zsh_history"
@@ -137,7 +138,7 @@ export PATH=/usr/local/bin:$PATH
 autoload -U compinit; compinit
 
 eval "$(zoxide init zsh)"
+#
 #eval $(op signin)
-
-OP_BIOMETRIC_UNLOCK_ENABLED=true
+#OP_BIOMETRIC_UNLOCK_ENABLED=true
 source /Users/tom/.config/op/plugins.sh
