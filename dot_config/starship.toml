@@ -18,7 +18,7 @@ disabled = true
 format = 'on [$symbol($profile )(\($region\) )]($style)'
 style = "bold blue"
 symbol = "🅰 "
-disabled = false
+disabled = true
 
 [azure]
 disabled = false
@@ -57,12 +57,47 @@ staged = '[++\($count\)](green)'
 renamed = "👅"
 deleted = "🗑"
 
-# ~/.config/starship.toml
 
 [kubernetes]
 format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
-disabled = false
+disabled = true
 
 [directory]
 truncation_length = 8
 truncation_symbol = "…/"
+home_symbol = "~"
+
+[container]
+format = '[$symbol \[$name\]]($style) '
+disabled = false
+
+[gcloud]
+format = '[$symbol$active]($style) '
+style = 'bold yellow'
+
+[helm]
+format = 'via [⎈ $version](bold white) '
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
+trim_at = '.companyname.com'
+disabled = true
+
+[localip]
+ssh_only = false
+format = '@[$localipv4](bold red) '
+disabled = true
+
+[status]
+style = 'bg:blue'
+symbol = '🔴 '
+success_symbol = '🟢 SUCCESS'
+format = '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style) '
+map_symbol = true
+disabled = true
+
+[sudo]
+style = 'bold green'
+symbol = '👩 sudo '
+disabled = false
