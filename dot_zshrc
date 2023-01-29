@@ -79,6 +79,7 @@ export GPG_TTY=$(tty)
 
 
 alias h="clear"
+alias x="exit"
 alias xx="exit"
 alias ls="ls -G"
 alias ltr="ls -ltr"
@@ -103,6 +104,7 @@ export PATH=/usr/local/bin:$PATH
 
 if [ -e /opt/homebrew/bin/zoxide ]; then eval "$(zoxide init zsh)"; fi
 if [ -e /opt/homebrew/bin/nvim ]; then alias vi="nvim" && alias v="nvim" &&  alias val="nvim ~/.zshrc" && alias sal="source ~/.zshrc"; fi 
+if [ -e /opt/homebrew/bin/starship ]; then alias starship="eval \"$(starship init zsh)\""; fi
 if [[ `uname` == "Darwin" ]]; then source /Users/tom/.config/op/plugins.sh; fi
 #eval $(op signin)
 #OP_BIOMETRIC_UNLOCK_ENABLED=true
