@@ -77,7 +77,9 @@ bindkey -v
 autoload -U compinit; compinit
 export GPG_TTY=$(tty)
 
-
+## An alias to open .zshrc in vim
+alias zshconfig="nvim ~/.zshrc"
+## An alias to open the current directory in Finder
 alias h="clear"
 alias x="exit"
 alias xx="exit"
@@ -119,3 +121,10 @@ if [ -e /Users/tom/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/tom/.nix-p
 if [ -f '/Users/tom/Dropbox/Mac/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tom/Dropbox/Mac/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/tom/Dropbox/Mac/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tom/Dropbox/Mac/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+#adding autojump
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+
+#adding github copilot cli
+if [ -e /opt/homebrew/bin/github-copilot-cli ]; then eval "$(github-copilot-cli alias -- "$0")"; fi
+
+
