@@ -21,7 +21,7 @@ symbol = "🅰 "
 disabled = true
 
 [azure]
-disabled = false
+disabled = true
 format = "on [$symbol($subscription)]($style) "
 symbol = "ﴃ "
 style = "blue bold"
@@ -82,7 +82,7 @@ format = 'via [⎈ $version](bold white) '
 ssh_only = false
 format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
 trim_at = '.companyname.com'
-disabled = true
+disabled = false
 
 [localip]
 ssh_only = false
