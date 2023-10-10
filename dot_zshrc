@@ -92,8 +92,11 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 #source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-##source "/opt/homebrew/Cellar/kube-ps1/0.8.0/share/kube-ps1.sh"
-if [ -d /usr/local/Cellar/kube-ps1/0.8.0 ]; then . /usr/local/Cellar/kube-ps1/0.8.0/share/kube-ps1.sh && PS1='$(kube_ps1)'$PS1; fi
+##source "/opt/homebrew/Cellar/kube-ps1/0.7.0/share/kube-ps1.sh"
+##PS1='$(kube_ps1)'$PS1
+
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+PS1='$(kube_ps1)'$PS1
 
 kubeoff
 
