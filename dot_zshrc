@@ -93,12 +93,19 @@ source $ZSH/oh-my-zsh.sh
 
 #source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 ##source "/opt/homebrew/Cellar/kube-ps1/0.7.0/share/kube-ps1.sh"
-##PS1='$(kube_ps1)'$PS1
+#source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+#PS1='$(kube_ps1)'$PS1
 
+
+if [ -e "/usr/local/opt/kube-ps1/share/kube-ps1.sh" ]; then
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
-
 kubeoff
+else
+source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
+PS1='$(kube_ps1)'$PS1
+kubeoff
+fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -112,7 +119,11 @@ kubeoff
 bindkey -v
 alias h="clear"
 alias xx="exit"
+alias ltr="ls -ltr"
+alias firepower='sudo /usr/libexec/ApplicationFirewall/socketfilterfw'
+alias exa="exa --long --header --git"
 if [ -e /opt/homebrew/bin/nvim ]; then alias vi="nvim" && alias v="nvim";fi
+if [ -e ~/Documents/GitHub ]; then alias cdg="cd ~/Documents/GitHub"; fi
 
 
 HISTFILE="$HOME/.zsh_history"
@@ -127,23 +138,37 @@ setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming 
 if [ -e /Users/tom/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/tom/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # This adds the Armory Version Manager (AVM) and Armory CLI to the path
-export PATH="${PATH}:/Users/tom/.avm/bin"
+##export PATH="${PATH}:/Users/tom/.avm/bin"
 export GPG_TTY=$(tty)
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export PATH=/Users/tom/Documents/GitHub/awssume/bin:$PATH
-export PATH=/usr/local/bin:$PATH
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/tom/Library/CloudStorage/Dropbox/Mac (2)/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tom/Library/CloudStorage/Dropbox/Mac (2)/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/tom/Library/CloudStorage/Dropbox/Mac (2)/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tom/Library/CloudStorage/Dropbox/Mac (2)/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="$PATH:/Users/tom/Documents/GitHub/awssume/bin"
+#
+eval "$(atuin init zsh --disable-up-arrow)"
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/tom/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 #
-echo 'eval "$(atuin init zsh)"' >> ~/.zshrc
-eval "$(atuin init zsh)"
+eval "$(zoxide init zsh)"
+export _ZO_ECHO=1
+
+if [ -e "/opt/homebrew/share/zsh/site-functions" ]; then source "/opt/homebrew/share/zsh/site-functions"; fi
+
+export KUBECTX_IGNORE_FZF=1
+#source cargo
+source "$HOME/.cargo/env"
+
+if [ -e /Users/tom/bin/terraform ]; then export PATH=$PATH:/Users/tom/bin; fi
+
+export OPENAI_API_KEY="{{ (index (onepassword "slvgccri33ng3n47xgkfnmpici").fields 1).value }}"
+
+
+eval "$(fzf --zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/tom/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tom/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/tom/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tom/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
