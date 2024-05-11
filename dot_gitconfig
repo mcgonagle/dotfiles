@@ -75,7 +75,13 @@
 	prune = true
 [merge]
 	ff = false
+	tool = vscode
 [grep]
 	lineNumber = true
 [diff]
 	wsErrorHighlight = all
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[mergetool "vscode"]
+	cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
