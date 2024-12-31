@@ -3,6 +3,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/tom/.oh-my-zsh"
+export LC_ALL=en_US.UTF-8 
+export LANG=en_US.UTF-8
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -70,7 +72,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git kubectl)
+plugins=(git kubectl dirhistory) 
 
 source $ZSH/oh-my-zsh.sh
 
@@ -122,6 +124,7 @@ alias xx="exit"
 alias ltr="ls -ltr"
 alias firepower='sudo /usr/libexec/ApplicationFirewall/socketfilterfw'
 alias exa="exa --long --header --git"
+alias cdh="cd;clear"
 if [ -e /opt/homebrew/bin/nvim ]; then alias vi="nvim" && alias v="nvim";fi
 if [ -e ~/Documents/GitHub ]; then alias cdg="cd ~/Documents/GitHub"; fi
 
@@ -148,7 +151,7 @@ export PATH="$PATH:/Users/tom/Documents/GitHub/awssume/bin"
 eval "$(atuin init zsh --disable-up-arrow)"
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/tom/.rd/bin:$PATH"
+#export PATH="/Users/tom/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 #
 eval "$(zoxide init zsh)"
@@ -162,7 +165,7 @@ source "$HOME/.cargo/env"
 
 if [ -e /Users/tom/bin/terraform ]; then export PATH=$PATH:/Users/tom/bin; fi
 
-export OPENAI_API_KEY="{{ (index (onepassword "slvgccri33ng3n47xgkfnmpici").fields 1).value }}"
+#export OPENAI_API_KEY="{{ (index (onepassword "slvgccri33ng3n47xgkfnmpici").fields 1).value }}"
 
 
 eval "$(fzf --zsh)"
@@ -172,3 +175,29 @@ if [ -f '/Users/tom/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/t
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/tom/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tom/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+export KUBE_EDITOR=nvim
+
+#source <(/opt/homebrew/bin/starship init zsh --print-full-init)
+#
+ if command -v ngrok &>/dev/null; then
+   eval "$(ngrok completion)"
+ fi
+
+ export PATH=$PATH:~/.local/bin
+
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
+
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export GPG_TTY=$(tty)
+
+# pnpm
+export PNPM_HOME="/Users/tom/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+#
+source <(torero completion zsh)
