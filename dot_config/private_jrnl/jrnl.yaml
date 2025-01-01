@@ -5,7 +5,7 @@ colors:
   title: none
 default_hour: 9
 default_minute: 0
-editor: ''
+editor: 'nvim'
 encrypt: true
 highlight: true
 indent_character: '|'
@@ -15,4 +15,4 @@ linewrap: 79
 tagsymbols: '@'
 template: false
 timeformat: '%Y-%m-%d %H:%M'
-version: v2.8.2
+version: v4.2
